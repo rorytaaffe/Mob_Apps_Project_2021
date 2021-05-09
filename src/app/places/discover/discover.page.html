@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> <p align="center"> Discover Places </p> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <!-- This is how to print one by one, this is the main big one on the page-->
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center> <!-- This only really affects the computer screens, not the mobile screens-->
+        <ion-card>
+          <ion-card-header>    
+            <ion-card-title> {{ loadedPlaces[0].title }} </ion-card-title> <!-- 1st element.title of that element-->
+            <ion-card-subtitle> {{ loadedPlaces[0].price | currency }} / Night </ion-card-subtitle> <!--  | currency will show a symbol , / Night  is just text -->
+          </ion-card-header>
+          <ion-img [src]="loadedPlaces[0].imageUrl"></ion-img>
+          <ion-card-content>  <!-- wrap the rest of the content-->
+            <p> {{ loadedPlaces[0].description }} </p>
+          </ion-card-content>
+          <div> <!-- text-right would usually put it to the right, but it wasn't working -->
+            <ion-button fill="clear" color="primary" 
+              [routerLink]="[ 
+              '/', 'places', 'tabs', 'booking']"
+              >
+              More
+            </ion-button> <!-- /places/tabs/discover/1st element-->
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- This is how to loop through the ones that are left-->
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-list>                <!-- .slice(1) will print all elements after the first one, seeing as we already hard coded that one above -->
+          <ion-item *ngFor="let place of loadedPlaces.slice(1)" 
+          [routerLink]="['/', 'places', 'tabs', 'booking']"
+          detail
+          > <!-- detail gives us a little > icon to show you can click-->
+            <ion-thumbnail slot="start"> <!-- similar to <ion-avatar>  but shows a square image instead of a rounded image --> <!-- start will put it on the left inside the the ion-item-->
+              <ion-img [src]="place.imageUrl"></ion-img> <!-- place gives us access to imageUrl because it is an instance variable of loadedPlaces, which is a property of Place constructor-->
+            </ion-thumbnail>
+            <ion-label>
+              <h2> {{ place.title }} </h2>
+              <h2> {{ place.description }} </h2>
+            </ion-label>>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

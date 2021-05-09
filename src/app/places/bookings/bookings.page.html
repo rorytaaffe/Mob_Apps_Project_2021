@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> <p align="center"> My Bookings</p> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <!-- This is how to print one by one, this is the main big one on the page-->
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center> <!-- This only really affects the computer screens, not the mobile screens-->
+        <ion-card>
+          <ion-card-header>    
+            <ion-card-title> {{ loadedPlaces[0].title }} </ion-card-title> <!-- 1st element.title of that element-->
+            <ion-card-subtitle> {{ loadedPlaces[0].price | currency }} / Night </ion-card-subtitle> <!--  | currency will show a symbol , / Night  is just text -->
+          </ion-card-header>
+          <ion-img [src]="loadedPlaces[0].imageUrl"></ion-img>
+          <ion-card-content>  <!-- wrap the rest of the content-->
+            <p> {{ loadedPlaces[0].description }} </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center> <!-- This only really affects the computer screens, not the mobile screens-->
+        <ion-card>
+          <ion-card-header>    
+            <ion-card-title> {{ loadedPlaces[1].title }} </ion-card-title> <!-- 1st element.title of that element-->
+            <ion-card-subtitle> {{ loadedPlaces[1].price | currency }} / Night </ion-card-subtitle> <!--  | currency will show a symbol , / Night  is just text -->
+          </ion-card-header>
+          <ion-img [src]="loadedPlaces[1].imageUrl"></ion-img>
+          <ion-card-content>  <!-- wrap the rest of the content-->
+            <p> {{ loadedPlaces[1].description }} </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center> <!-- This only really affects the computer screens, not the mobile screens-->
+        <ion-card>
+          <ion-card-header>    
+            <ion-card-title> {{ loadedPlaces[2].title }} </ion-card-title> <!-- 1st element.title of that element-->
+            <ion-card-subtitle> {{ loadedPlaces[2].price | currency }} / Night </ion-card-subtitle> <!--  | currency will show a symbol , / Night  is just text -->
+          </ion-card-header>
+          <ion-img [src]="loadedPlaces[2].imageUrl"></ion-img>
+          <ion-card-content>  <!-- wrap the rest of the content-->
+            <p> {{ loadedPlaces[2].description }} </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

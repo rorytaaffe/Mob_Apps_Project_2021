@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> <p align="center"> My Offers </p> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-list>
+          <ion-item *ngFor="let offer of offers" [routerLink]="['/', 'places', 'tabs', 'booking']">
+            <ion-thumbnail slot="start">
+              <ion-img [src]="offer.imageUrl"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+              <h1>{{ offer.title }}</h1>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

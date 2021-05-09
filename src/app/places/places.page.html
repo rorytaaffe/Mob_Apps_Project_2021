@@ -1,0 +1,30 @@
+<ion-tabs> <!-- wrapper around the entire tabbing logic-->
+
+  <!-- slot="bottom" will put it at the bottom of the page-->
+<ion-tab-bar slot="bottom"> <!-- this allows you to define which buttons/text/tabs/icons you want to have-->
+
+                      <!-- Angular will know which page to go to, as long as it matches which the name in the Routing Setup -->
+<ion-tab-button tab="discover"> <!-- will allow you to set up the different button in your tab bar , they will each get a unique identifier using tab=""-->
+<ion-label>Discover </ion-label> <!-- this is for adding text-->
+<ion-icon name="search"> </ion-icon> <!-- icon name/type using name="" -->
+</ion-tab-button>
+
+<ion-tab-button tab="offer"> 
+<ion-label>Offers </ion-label> 
+<ion-icon name="card"> </ion-icon> 
+</ion-tab-button>
+
+<ion-tab-button tab="booking"> 
+  <ion-label>Bookings </ion-label> 
+  <ion-icon name="images-outline"> </ion-icon> 
+  </ion-tab-button>
+
+  <ion-tab-button tab="weather"> 
+    <ion-label>Weather </ion-label> 
+    <ion-icon name="sunny-outline"> </ion-icon> 
+    </ion-tab-button>
+
+</ion-tab-bar> 
+
+</ion-tabs>
+

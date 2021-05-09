@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> <p align="center">Weather</p></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngFor="let weath of weatherData" >
+    <ion-card-header>
+     <ion-card-subtitle>{{weath.main}}</ion-card-subtitle>
+    <ion-card-title>France</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card *ngFor="let weath1 of weatherDataUSA" >
+    <ion-card-header>
+     <ion-card-subtitle>{{weath1.main}}</ion-card-subtitle>
+    <ion-card-title>USA</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card *ngFor="let weath2 of weatherDataItaly" >
+    <ion-card-header>
+     <ion-card-subtitle>{{weath2.main}}</ion-card-subtitle>
+    <ion-card-title>Italy</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>
